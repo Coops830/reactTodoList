@@ -1,0 +1,102 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$border_theme: #f37042;
+$back_color: #918E85;
+
+@mixin btn_theme {
+  border: solid $border_theme;
+  border-radius: 20px;
+  background-color: white;
+  height: 50px;
+  width: 75px;
+  margin: 5px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+@mixin txtBox_theme {
+  height: 50px;
+  width: 300px;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 5px;
+
+  &:focus {
+    border: solid 2px $border_theme;
+    box-shadow: 0 0 10px $border_theme;
+  }
+}
+
+@mixin list_theme {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  height: 100%;
+  width: 30%;
+  font-size: 1.2rem;
+  padding: 10px;
+  color: black;
+  background-color: white;
+}
+
+
+
+body {
+  background-color: $back_color;
+  color: white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+
+  h1 {
+    font-size: 5rem;
+  }
+}
+
+.list-container {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 10vh;
+  margin-top: 10px;
+  background-color: $back_color;
+
+  ul {
+    list-style: none;
+  }
+
+  .todo-list {
+    @include list_theme;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .done-del {
+    @include list_theme;
+    width: 5%;
+    margin-left: 10px;
+    border-radius: 0 10px 10px 0;
+  }
+}
+
+.todo-btn {
+  @include btn_theme;
+}
+
+.todo-input {
+  @include txtBox_theme;
+}
+
+.todo-date {
+  @include txtBox_theme;
+  margin-left: 5px;
+}
+
+.completed-count {
+  margin-top: 5px;
+  font-size: 1.25rem;
+}

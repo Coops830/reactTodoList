@@ -19,7 +19,7 @@ const submitTodoHandler = (event) => {
     return(
         <>
             <form onSubmit={submitTodoHandler}>
-                <input className="todo-input" type="text" value={inputText} onChange={inputTextHandler} placeholder="Eentr a task" />
+                <input className="todo-input" type="text" value={inputText} onChange={inputTextHandler} placeholder="Enter a task" />
                 <button className="todo-btn">Enter</button>
             </form>
         </>
